@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KIT.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <section id="contact-section">
+      <!-- Initial landing state -->
+      <div id="contact-landing">
+          <h2>Let's Connect</h2>
+          <div class="social-icons">
+              <a href="https://www.linkedin.com/in/joe-touchet" target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="mailto:joe.touchet@gmail.com">
+                  <i class="fas fa-envelope"></i>
+              </a>
+          </div>
+          <p>Please don't hesitate to reach out if you would like to chat about work or side project opportunities, share your feedback and input, or just connect. I am always open to new conversations and will do my best to respond to you in a timely manner. Talk soon!</p>
+          <button id="contact-button">Contact Me</button>
+      </div>
+  
+      <!-- Contact Form (Hidden by Default) -->
+      <div id="contact-form" class="hidden">
+        <h2>Let's Connect</h2>
+          <div class="social-icons">
+              <a href="https://www.linkedin.com/in/joe-touchet" target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="mailto:joe.touchet@gmail.com">
+                  <i class="fas fa-envelope"></i>
+              </a>
+          </div>
+          <form action="https://formspree.io/f/mldgnpyy" method="POST">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <textarea name="message" placeholder="Your Message" required></textarea>
+              <button type="submit">Send Message</button>
+          </form>
+      </div>
+  </section>
+
+      <!-- Confirmation Message & CTA (Initially Hidden) -->
+      <div id="confirmation-container" class="hidden">
+        <h2>Thank You! 🎉</h2>
+        <p>
+          Your message has been sent. I'll get back to you as soon as possible.
+        </p>
+        <a href="projects.html" id="cta-button">Check Out My Work</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Joe Touchet. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/header.js"></script>
+    <script src="scripts/contact.js"></script>
+  </body>
+</html>

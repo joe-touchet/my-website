@@ -1,20 +1,80 @@
-/* Global Styles */
-body {
-    font-family: 'Times New Roman', Times, serif;
+/*General Reset*/
+* {
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
-    text-align: center;
+    box-sizing: border-box;
 }
 
-/* Navigation Bar */
+/* Page Styling*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 60px;
+}
+
+/* Header Styling */
+header {
+    background-color: #021d20; /* Adjust color if needed */
+    padding: 5px 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul li a.active {
+    color: #f04a4a; /* Same hover color */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Flexbox container for proper spacing */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Space out logo and nav */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the container */
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    gap: 10px; /* Adds spacing between the image and text */
+}
+
+.logo img {
+    width: 60px;  /* Adjust size as needed */
+    height: 60px;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures the image fills the space */
+}
+
+
+.logo:hover{
+    color: #f04a4a;
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+
+/* Nav Bar Styling */
 nav ul {
     list-style: none;
-    padding: 15px;
-    background: #333;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -22,157 +82,366 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
-    font-size: 18px;
-}
-
-/* Navbar Styling */
-.navbar ul {
-    list-style: none;
-    padding: 15px;
-    background: #333;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.navbar ul li {
-    display: inline;
-}
-
-.navbar ul li a {
     color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px;
-    transition: all 0.3s ease-in-out;
+    font-size: 12px;
+    transition: all 0.3s ease;
 }
 
-/* Hover Effect: Change font weight & color */
-.navbar ul li a:hover {
+nav ul li a:hover {
     font-weight: bold;
-    color: #339829; /* Gold color on hover */
+    color: #f04a4a;
 }
 
 
-/* Hero Section */
+/* Hero Section*/
 .hero {
-    padding: 100px 20px;
-    background: #c30101;
-    color: white;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5px;
+    margin-top: 10px;
 }
+
+.tagline {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    max-width: 800px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .hero .btn {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 20px;
     padding: 10px 20px;
-    background: #ff5f5f;
+    background: #f04a4a;
     color: white;
+    text-decoration: none;
     font-weight: bold;
-    text-decoration: none;
     border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-/* About Preview */
-.about-preview {
-    padding: 50px;
-    background: white;
+.hero .btn:hover {
+    background: #c03c3c;
 }
 
-.profile-image {
-    width: 300px;
-    height: 300px; 
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgb(15, 10, 10);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    display: block; 
-    margin: 0 auto;
-}
 
-.about-preview .btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* Featured Projects */
-.featured-projects {
-    padding: 50px;
-    background: #eee;
-}
-
-.project-grid {
-    display: flex;
-    justify-content: center;
+/*Featured Projects Grid*/
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
-}
-
-.project {
-    background: white;
     padding: 20px;
-    border-radius: 10px;
-    width: 250px;
 }
 
-.project img {
+.project-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-item img {
     width: 100%;
-    border-radius: 5px;
+    height: auto;
+    display: block;
 }
 
-/* Footer */
-footer {
-    padding: 20px;
-    background: #222;
-    color: white;
-    margin-top: 30px;
-}
-
-/* Resume Page Styling */
-.resume-section {
-    text-align: center;
-    padding: 30px;
-    max-width: 1000px; /* Increased width*/
-    margin: 0 auto;
-}
-
-.resume-container {
+/* About Section */
+.about-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 10px;
-    padding: 10px; /*added padding for spacing*/
-    background: #f8f8f8; /*light color for contrast*/
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+/* Center Image */
+.about-image img {
+    width: 180px; /* Smaller size */
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Introduction Text */
+.about-intro {
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+/* Three-Column Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: left; /* Keeps text readable inside cards */
+}
+
+/* Style for Each Section */
+.about-card {
+    background: rgba(255, 140, 0, 0.15); /* Light Orange Background */
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.resume-frame {
-    width: 90%; /*increased width*/
-    height: 750px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-download {
+.contact .btn {
     display: inline-block;
-    margin: 30px;
+    margin-top: 20px;
     padding: 10px 20px;
-    background: #007bff;
+    background: #f04a4a;
     color: white;
-    font-weight: bold;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
     border-radius: 5px;
     transition: background 0.3s ease-in-out;
 }
 
+.contact .btn:hover {
+    background: #c03c3c;
+}
+
+.cta-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: #f04e45; /* Match with "Review My Resume" button */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background-color: #c83d36; /* Darker shade on hover */
+}
+
+
+
+/*Resume*/
+
+.resume-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.resume-frame {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+/* Resume Download Button */
+.btn-download {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    width: fit-content;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px auto;
+    margin-bottom: 20px;
+}
+
 .btn-download:hover {
     background: #0056b3;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+    margin-top: 50px;}
+
+
+
+/* Contact */
+
+.contact-section {
+    text-align: center;
+    max-width: 600px;
+    margin: 50px auto;}
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;  /* Ensures uniform size */
+        height: 40px;
+    }
+    
+    .social-icons a i,
+    .social-icons a img { /* Ensures both Font Awesome and images/icons follow the same rule */
+        font-size: 2rem; /* Keeps all icons the same size */
+        width: 40px;  
+        height: 40px;
+        color: black    }
+    
+    /* Optional: Change color on hover */
+    .social-icons a:hover i,
+    .social-icons a:hover img {
+        color: #0077b5; /* LinkedIn blue */
+        filter: brightness(0) saturate(100%) invert(28%) sepia(97%) saturate(582%) hue-rotate(177deg) brightness(94%) contrast(92%);
+    }
+    
+    
+
+#contact-button { 
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: 2px solid black; 
+    border-radius: 25px;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#contact-button:hover {
+    background: #f04a4a;
+    color: white;
+}
+
+#contact-form {
+    display: flex; /* Enables centering */
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: center; /* Centers horizontally */
+    justify-content: center; /* Centers vertically */
+    margin: 20px auto; /* Ensures it's centered */
+    max-width: 400px; /* Limits width */
+}
+
+#contact-form form {
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; 
+}
+
+#contact-form button{
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #f04a4a;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#contact-form button:hover {
+    background: #c03c3c;
+}
+
+.hidden {
+    display: none;
+}
+
+#confirmation-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #f04a4a;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#cta-button:hover {
+    background: #c03c3c;
+}
+
+/* Ensure only one contact form appears at a time */
+#contact-form {
+    display: none; /* Keep it hidden until triggered */
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Ensure only one landing section */
+#contact-landing {
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Ensure button is centered */
+#contact-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: 2px solid black;
+    border-radius: 25px;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+#contact-button:hover {
+    background: black;
+    color: white;
 }
