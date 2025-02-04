@@ -445,3 +445,45 @@ footer {
     background: black;
     color: white;
 }
+
+/* 📱 Mobile Screens: Adjust layout for screens smaller than 768px */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 60px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Stack Columns Instead of Side-by-Side */
+    .about-grid {
+        display: flex;
+        flex-direction: column !important; /* Ensures stacking */
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .about-card {
+        width: 90%; /* Each card takes up most of the screen width */
+        max-width: 500px; /* Prevents it from getting too wide */
+        text-align: left;
+        padding: 15px;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
