@@ -5,13 +5,17 @@
     box-sizing: border-box;
 }
 
+
 /* Page Styling*/
+@media (max-width: 768px) {
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
     line-height: 1.6;
-    padding-top: 60px;
+    padding-top: 20px;
+    font-size: 16px;
+}
 }
 
 /* Header Styling */
@@ -251,12 +255,27 @@ nav ul li a:hover {
     max-width: 800px;
     margin: auto;
     padding: 20px;
+    text-align: center;
 }
 
 .resume-frame {
     width: 100%;
-    height: 600px;
+    height: 80vh;
     border: none;
+}
+
+/* 📱 Mobile: Adjust height for better visibility */
+@media (max-width: 768px) {
+    .resume-frame {
+        display: none; /* Hide PDF on small screens */
+    }
+
+    .btn-download {
+        width: 90%;
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+    }
 }
 
 /* Resume Download Button */
